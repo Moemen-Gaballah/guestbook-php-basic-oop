@@ -1,0 +1,64 @@
+
+        <div class="admin-panel__content">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header">
+                        <h1>Update User</h1>
+                    </div>
+                    <?php if(strlen($error) > 0){ ?>
+                    <div class="alert alert-danger">
+                        <p><?php echo $error; ?></p>
+                    </div>
+                    <?php } ?>
+
+                   <!--  <div class="alert alert-success">
+                        <p>User added successfully...</p>
+                    </div> -->
+                </div>
+                <?php if($idFromUrl > 0) { ?>
+                <div class="col-md-8">
+                    <form class="form-horizontal" method="post" action="updateuser.php">
+                        <!-- <div class="form-group">
+                            <label for="full-name" class="col-sm-3 control-label">Full Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="full-name" placeholder="Full Name">
+                            </div>
+                        </div> -->
+                        <div class="form-group">
+                            <label for="username" class="col-sm-3 control-label">Username</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="username" id="username" value="<?php echo $user['username']; ?>" placeholder="Username">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email-address" class="col-sm-3 control-label">Email Address</label>
+                            <div class="col-sm-9">
+                                <input type="email" name="email" class="form-control" id="email-address" value="<?php echo $user['email']; ?>" placeholder="Email Address">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-sm-3 control-label">Password</label>
+                            <div class="col-sm-9">
+                                <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
+                       <!--  <div class="form-group">
+                            <label for="confirm-password" class="col-sm-3 control-label">Confirm Password</label>
+                            <div class="col-sm-9">
+                                <input type="password" name="password_confirmation" class="form-control" id="confirm-password" placeholder="Confirm Password">
+                            </div>
+                        </div> -->
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <button type="submit" class="btn btn-success"><i class="fa fa-user"></i> Update User</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <?php } ?>
+            </div>
+
+        </div>
